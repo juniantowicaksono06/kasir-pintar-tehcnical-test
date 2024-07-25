@@ -1,0 +1,33 @@
+version: '3'
+services:
+  laravel:
+    container_name: laravel-reimbursement
+    command: /usr/local/bin/run.sh
+    build: .
+    ports:
+      - 8089:8000
+      - 5173:5173
+      - 5174:5174
+    volumes:
+      - ./src:/var/www/html
+      - ./docker-php-upload.ini:/usr/local/etc/php/conf.d/docker-php-upload.ini
+    networks:
+      - laravel_network
+  postgre:
+    container_name: postgre1
+    environment:
+      - POSTGRES_USER=mypostgres
+      - POSTGRES_PASSWORD=Abcd1234
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - TZ="GMT+7"
+      - PGTZ="GMT+7"
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    networks:
+      - laravel_network
+networks:
+  laravel_network:
+    driver: bridge

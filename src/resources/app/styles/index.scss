@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: 'Inter', Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+    background-color: #7066e0 !important;
+    color: #fff;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny) {
+    background-color: #dc3741 !important;
+    color: #fff;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
+    background-color: #6e7881 !important;
+    color: #fff;
+}
+
+.datepicker-container, 
+.datepicker-container > div.react-datepicker-wrapper, 
+.datepicker-container > div > div.react-datepicker__input-container
+.datepicker-container > div > div.react-datepicker__input-container input {
+   width: 100%;
+}
