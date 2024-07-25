@@ -9,7 +9,6 @@ import LoadingProvider from "@/providers/LoadingProvider";
 const Home = React.lazy(() => import('@/pages/Home'));
 const CreateReimbursement = React.lazy(() => import('@/pages/CreateReimbursement'));
 const Login = React.lazy(() => import('@/pages/Login'));
-const Register = React.lazy(() => import('@/pages/Register'));
 const Users = React.lazy(() => import('@/pages/Users'));
 const AddUser = React.lazy(() => import('@/pages/AddUser'));
 const EditUser = React.lazy(() => import('@/pages/EditUser'));
@@ -95,16 +94,6 @@ const router = createBrowserRouter(
                     <React.Suspense fallback={<RouteLoading />}>
                         <UnprotectedRoute>
                             <Login />
-                        </UnprotectedRoute>
-                    </React.Suspense>
-                }
-            />
-            <Route
-                path="/register"
-                element={
-                    <React.Suspense fallback={<RouteLoading />}>
-                        <UnprotectedRoute>
-                            <Register />
                         </UnprotectedRoute>
                     </React.Suspense>
                 }
